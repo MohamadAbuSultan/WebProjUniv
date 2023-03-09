@@ -1,6 +1,10 @@
 
-
 <?php 
+
+    $year = 2020;
+    $check1 = is_string($year);
+    var_dump($check1);
+
     $data = array(1,2,3);
     $check = is_array($data);
     var_dump($check);
