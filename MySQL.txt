@@ -1,0 +1,22 @@
+mysql -u root 
+Create database ecom;
+show databases;
+
+mysql -u root -p لو بدك تكتب باسسورد
+
+CREATE DATABASE
+CREATE DATABASE IF NOT EXISTS mohamad; 
+DROP DATABASE mohamad; بحذفها
+DROP DATABASE IF EXISTS mohamad;
+
+select 
+	 *
+from 
+     mohamad 
+where
+	 id = 100
+order by
+	 id 
+limit 1;
+
+use products; select * from mohamad;
