@@ -1,0 +1,8 @@
+<?php 
+/*
+TINYINT
+SMALLINT
+MEDIUMINT
+INT
+BIGINT
+*/
