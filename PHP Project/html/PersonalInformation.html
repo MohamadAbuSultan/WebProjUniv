@@ -1,37 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../CSS/GraduationProject.css">
+    <link rel="stylesheet" href="../CSS/Index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <title>Personal Information</title>
+
+    <style>
+        * {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            padding-right: 50px;
+        }
+
+        input {
+            display: inline-block;
+            border: none;
+        }
+
+        button {
+            margin-left: 20px;
+        }
+
+        #image1 {
+            position: absolute;
+            right: 300px;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+
 </head>
+
 <body>
     <header>
         <div class="inner">
             <nav>
-                <li><span><a href="PersonalInformation.html">Personal Information</a></span></li>
+                <li><span><a href="PersonalInformation.html" style="color: white;">Personal Information</a></span></li>
                 <li><span><a href="CoursesInformation.html">Courses Information</a></span></li>
                 <li><span><a href="ExperiencesInformation.html">Experiences Information</a></span></li>
                 <li><span><a href="AddCourse.html">Add Course</a></span></li>
                 <li><span><a href="AddExperiences.html">Add Experiences</a></span></li>
-                <li><span><a href="" class="button">Contact me</a></span></li>
             </nav>
 
             <div class="logo">
                 <div>
-                    <img src="logo.png" alt="Google logo">
+                    <img src="../logo.png" alt="Google logo">
                 </div>
             </div>
         </div>
     </header>
-    <h1>This Is The Personal Information</h1>
+
+    <div class="body">
+        <h1 style="margin-left: 50px;">Personal Information</h1>
+        <form action="../PHP/signup.inc.php" class="Info" method="post">
+            <img id="image1" src="../mohamad.jpg" alt="Google logo">
+
+            <div class="test">
+
+                <label for="name">Full Name : </label>
+                <input type="text" id="name" name="FullName" placeholder="Mohamad Khaled"><br><br>
+
+                <label for="gender">Gender : </label>
+                <input type="text" id="gender" name="gender" placeholder="Male"><br><br>
+
+                <label for="datemax">Birth Date : </label>
+                <input type="date" id="datemax" name="BirthDate" max="2025-12-31"><br><br>
+
+                <label for="nationality">Nationality : </label>
+                <input type="text" id="nationality" name="nationality" placeholder="palestinian"><br><br>
+
+                <label for="place_of_birth">Place Of Date : </label>
+                <input type="text" id="place_of_birth" name="place_of_birth" placeholder="Gaza"><br><br>
+
+                <label for="job">Job Title : </label>
+                <input type="text" id="job" name="job" placeholder="Software Engineer"><br><br>
+
+                <label for="experience">Year of experience : </label>
+                <input type="text" id="experience" name="experience" placeholder="3 years"><br><br>
+
+                <button type="submit" name="submit">Sign in</button>
+
+            </div>
+
+        </form>
+    </div>
 
 </body>
+
 </html>
