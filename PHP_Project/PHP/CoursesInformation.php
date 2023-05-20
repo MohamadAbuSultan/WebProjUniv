@@ -38,11 +38,11 @@
     <header>
         <div class="inner">
             <nav>
-                <li><span><a href="PersonalInformation.html">Personal Information</a></span></li>
-                <li><span><a href="CoursesInformation.html" style="color: white;">Courses Information</a></span></li>
-                <li><span><a href="ExperiencesInformation.html">Experiences Information</a></span></li>
-                <li><span><a href="AddCourse.html">Add Course</a></span></li>
-                <li><span><a href="AddExperiences.html">Add Experiences</a></span></li>
+                <li><span><a href="PersonalInformation.php">Personal Information</a></span></li>
+                <li><span><a href="CoursesInformation.php" style="color: white;">Courses Information</a></span></li>
+                <li><span><a href="ExperiencesInformation.php">Experiences Information</a></span></li>
+                <li><span><a href="AddCourse.php">Add Course</a></span></li>
+                <li><span><a href="AddExperiences.php">Add Experiences</a></span></li>
             </nav>
 
             <div class="logo">

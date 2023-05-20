@@ -1,3 +1,5 @@
+
+
 <?php
 
 $servername = "localhost";
@@ -12,6 +14,15 @@ if ($conn->connect_error) {
     die("Error connecting to MySQL: " . $conn->connect_error);
 }
 
+$FullName = '';
+$gender = '';
+$BirthDate = '';
+$nationality = '';
+$place_of_birth = '';
+$job = '';
+$experience = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $FullName = $_POST['FullName'];
 $gender = $_POST['gender'];
 $BirthDate = $_POST['BirthDate'];
@@ -19,10 +30,10 @@ $nationality = $_POST['nationality'];
 $place_of_birth = $_POST['place_of_birth'];
 $job = $_POST['job'];
 $experience = $_POST['experience'];
-
+}
 $sql = "INSERT INTO personalinformation (FullName, Gender, BirthDate, Nationality, PlaceOfDate, JobTitle, YearOfExperience )
             VALUES ('$FullName', '$gender', '$BirthDate' , '$nationality', '$place_of_birth', '$job', '$experience')";
-mysqli_query($conn, $sql);
+mysqli_query($conn, $sql); 
 
   // Check if the user has entered a name
 if (empty($_POST['FullName'])) {
@@ -66,7 +77,7 @@ if (empty($_POST['FullName'])) {
     exit;
   }
   
-  header("Location: ../html/PersonalInformation.html");
+  // header("Location: ../html/PersonalInformation.html");
   
 //   // Check if the user has uploaded an image file
 //   if (!isset($_FILES["image"]) || !is_uploaded_file($_FILES["image"]["tmp_name"])) {
