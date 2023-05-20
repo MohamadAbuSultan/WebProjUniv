@@ -1,35 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../CSS/Index.css">
+  <link rel="stylesheet" href="../CSS/Index.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>Add Experiences</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Add Experiences</title>
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/unispace" />
+  <link rel="stylesheet" href="https://allfont.net/allfont.css?fonts=comic-sans-ms-bold" />
+
 </head>
-<body>
-    <header>
-        <div class="inner">
-            <nav>
-                <li><span><a href="PersonalInformation.html">Personal Information</a></span></li>
-                <li><span><a href="CoursesInformation.html">Courses Information</a></span></li>
-                <li><span><a href="ExperiencesInformation.html">Experiences Information</a></span></li>
-                <li><span><a href="AddCourse.html">Add Course</a></span></li>
-                <li><span><a href="AddExperiences.html" style="color: white;">Add Experiences</a></span></li>
-            </nav>
 
-            <div class="logo">
-                <div>
-                    <img src="logo.png" alt="Google logo">
-                </div>
-            </div>
+<body>
+  <header>
+    <div class="inner">
+      <nav>
+        <li><span><a href="PersonalInformation.html">Personal Information</a></span></li>
+        <li><span><a href="CoursesInformation.html">Courses Information</a></span></li>
+        <li><span><a href="ExperiencesInformation.html">Experiences Information</a></span></li>
+        <li><span><a href="AddCourse.html">Add Course</a></span></li>
+        <li><span><a href="AddExperiences.html" style="color: white;">Add Experiences</a></span></li>
+      </nav>
+
+      <div class="logo">
+        <div>
+          <img src="../Images/Azhar_blue_LOGO.png" alt="Azhar_blue_LOGO">
         </div>
-    </header>
-    <h1>Add Experiences</h1>
+      </div>
+    </div>
+  </header>
+  <h1>Add Experiences</h1>
+  <img id="image" name="image" src="../Images/Exp.jpeg" alt="Google logo">
+
+  
+  <div class="col">
+    <form>
+
+      <div class="clear">
+        <div class="col1" width="400px">
+          <p> <label>Experiance category</label> </p>
+        </div>
+        <div class="col1">
+          <select class="date" name="courseName">
+            <option>Job</option>
+            <option>FreeLancer</option>
+            <option>SelfLearning</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="clear">
+        <div class="col1">
+          <p> <label>Experiance Title:</label></p>
+        </div>
+        <div class="col1">
+          <input type="text">
+        </div>
+      </div>
+
+      <div class="clear">
+        <div class="col1">
+          <p> <label> Start Month: </label> </p>
+        </div>
+        <div id="date1" class="col1 expdate">
+          <input class="date" type="month">
+        </div>
+      </div>
+
+      <div class="clear">
+        <div class="col1">
+          <p><label> End Month: </label></p>
+        </div>
+        <div class="col1 expdate ">
+          <input class="date" type="month">
+        </div>
+      </div>
+
+      <div class="clear">
+        <div class="col1">
+          <p> <label>Institution:</label></p>
+        </div>
+        <div class="col1 expdate date">
+          <input type="text">
+        </div>
+      </div>
+
+      <div class="clear">
+        <div class="col1">
+          <p> <label>Description:</label></p>
+        </div>
+        <div class="col1">
+          <textarea rows="6" cols="40"></textarea>
+        </div>
+      </div>
+
+      <div class="clear">
+        <div class="col1">
+          <button id="button1">Save</button>
+        </div>
+        <div id="button2" class=" col1 col2">
+          <input type="reset" class="reset" height="20" width="100" value="Reset" />
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div id="footer">
+    <p>&copy; My Website 2023. mohamadkhaled All rights reserved</p>
+</div>
+  
 </body>
+
 </html>

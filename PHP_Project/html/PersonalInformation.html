@@ -12,13 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <title>Personal Information</title>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/unispace"/>
+    <link rel="stylesheet" href="https://allfont.net/allfont.css?fonts=comic-sans-ms-bold"/>
+          
 
     <style>
-        * {
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
         label {
             display: inline-block;
             width: 150px;
@@ -29,10 +27,6 @@
         input {
             display: inline-block;
             border: none;
-        }
-
-        button {
-            margin-left: 20px;
         }
 
         #image {
@@ -58,23 +52,21 @@
 
             <div class="logo">
                 <div>
-                    <img src="../logo.png" alt="Google logo">
+                    <img src="../Images/Azhar_blue_LOGO.png" alt="Azhar_blue_LOGO">
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="body">
-        <h1 style="margin-left: 50px;">Personal Information</h1>
+    <div class="PersonalInformation">
+        <h1 style="margin-left: 50px; margin-bottom: 20px;">Personal Information</h1>
         <form action="../PHP/signup.inc.php" class="Info" method="post">
+            <img id="image" name="image" src="../Images/personal.png" alt="Personal">
 
             <div class="test">
 
-                <label for="name">Full Name : </label>
-                <input type="text" id="name" name="FullName" placeholder="Mohamad Khaled"><br><br>
-
-                <label for="image">Image : </label>
-                <input type="file" id="image" name="image"><br><br>              
+                <label for="FullName">Full Name : </label>
+                <input type="text" id="FullName" name="FullName" placeholder="Mohamad Khaled"><br><br>
 
                 <label for="gender">Gender : </label>
                 <input type="text" id="gender" name="gender" placeholder="Male"><br><br>
@@ -89,9 +81,9 @@
                 <input type="text" id="place_of_birth" name="place_of_birth" placeholder="Gaza"><br><br>
 
                 <label for="job">Job Title : </label>
-                <input type="text" id="job" name="job" placeholder="Software Engineer"><br><br>
+                <input type="text" id="job" name="job" placeholder="Software Engineer"><br>
 
-                <label for="experience">Year of experience : </label>
+                <label for="experience"><p>Year of experience : </p></label>
                 <input type="text" id="experience" name="experience" placeholder="3 years"><br><br>
  
                 <button type="submit" name="submit">Sign in</button>
@@ -101,9 +93,9 @@
         </form>
     </div>
 
-    <footer>
-        <p >&copy; My Website 2023. All Rights Reserved</p>
-    </footer>
+    <div id="footer">
+        <p>&copy; My Website 2023. mohamadkhaled All rights reserved</p>
+    </div>
 
 </body>
 

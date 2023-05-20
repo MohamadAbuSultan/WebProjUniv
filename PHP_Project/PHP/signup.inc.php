@@ -19,20 +19,10 @@ $nationality = $_POST['nationality'];
 $place_of_birth = $_POST['place_of_birth'];
 $job = $_POST['job'];
 $experience = $_POST['experience'];
-// Get the image file name and data
-$image_name = $_FILES["image"]["name"];
-$image_data = file_get_contents($_FILES["image"]["tmp_name"]);
 
-$sql = "INSERT INTO personalinformation (FullName, Gender, BirthDate, Nationality, PlaceOfDate, JobTitle, YearOfExperience, image_name, image_data)
-            VALUES ('$FullName', '$gender', '$BirthDate' , '$nationality', '$place_of_birth', '$job', '$experience' ,'$image_name', '$image_data')";
+$sql = "INSERT INTO personalinformation (FullName, Gender, BirthDate, Nationality, PlaceOfDate, JobTitle, YearOfExperience )
+            VALUES ('$FullName', '$gender', '$BirthDate' , '$nationality', '$place_of_birth', '$job', '$experience')";
 mysqli_query($conn, $sql);
-
-// Check if the image was inserted successfully
-if ($result) {
-    echo "Image was inserted successfully.";
-  } else {
-    echo "Error inserting image: " . $mysqli->error;
-  }
 
   // Check if the user has entered a name
 if (empty($_POST['FullName'])) {
@@ -76,23 +66,24 @@ if (empty($_POST['FullName'])) {
     exit;
   }
   
-  // Check if the user has uploaded an image file
-  if (!isset($_FILES["image"]) || !is_uploaded_file($_FILES["image"]["tmp_name"])) {
-    echo "Error: No image file was uploaded.";
-    exit;
-  }
+  header("Location: ../html/PersonalInformation.html");
+  
+//   // Check if the user has uploaded an image file
+//   if (!isset($_FILES["image"]) || !is_uploaded_file($_FILES["image"]["tmp_name"])) {
+//     echo "Error: No image file was uploaded.";
+//     exit;
+//   }
 
-// Check if the user has uploaded an image file
-if (!isset($_FILES["image"]) || !is_uploaded_file($_FILES["image"]["tmp_name"])) {
-  echo "Error: No image file was uploaded.";
-  exit;
-}
+// // Check if the user has uploaded an image file
+// if (!isset($_FILES["image"]) || !is_uploaded_file($_FILES["image"]["tmp_name"])) {
+//   echo "Error: No image file was uploaded.";
+//   exit;
+// }
 
-// Check if the image file was uploaded successfully
-$destination = "/var/www/html/images/" . $_FILES["image"]["name"];
-if (!move_uploaded_file($_FILES["image"]["tmp_name"], $destination)) {
-  echo "Error: The image file could not be uploaded.";
-  exit;
-}
+// // Check if the image file was uploaded successfully
+// // $destination = "/var/www/html/images/" . $_FILES["image"]["name"];
+// if (!move_uploaded_file($_FILES["image"]["tmp_name"], $destination)) {
+//   echo "Error: The image file could not be uploaded.";
+//   exit;
+// }
 
-header("Location: ../html/PersonalInformation.html");
