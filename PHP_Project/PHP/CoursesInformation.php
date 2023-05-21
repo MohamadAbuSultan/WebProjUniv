@@ -1,6 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- 
+    لإضافة صورة
+    في ال ImagePath بنكتب
+    ../Images/إسم الصورة
 
+    في الImageName بنكتب
+    إسم الصورة
+    personal.png
+
+    مثال :- 
+    INSERT INTO `coursesinformation`
+     (`id`, `CourseName`, `Hours`, `StartDate`, `EndDate`, `Institution`, `ImagePath`, `Notes`, `ImageName`)
+    VALUES (NULL, 'web', '90', '2023-05-03', '2023-05-23', 'gggggggg', '../Images/personal.png', 'helloooooooooooooo', 'personal.png\r\n');
+ -->
+ 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "test";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check if the connection was successful
+if ($conn->connect_error) {
+    die("Error connecting to MySQL: " . $conn->connect_error);
+}
+
+// Retrieve course information from the database
+$query = "SELECT * FROM coursesinformation";
+$result = mysqli_query($conn, $query);
+
+
+// Retrieve the count of existing insertions
+$query2 = "SELECT COUNT(*) as total FROM coursesinformation";
+$result2 = mysqli_query($conn, $query2);
+$row = mysqli_fetch_assoc($result2);
+$count = $row['total'];
+
+$limit = 3; // Set the desired limit
+
+if ($count >= $limit) {
+    // Delete all previous insertions
+    $deleteQuery = "DELETE FROM coursesinformation";
+    $deleteResult = mysqli_query($conn, $deleteQuery);
+
+    if (!$deleteResult) {
+        die("Error deleting previous insertions: " . mysqli_error($conn));
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,8 +85,9 @@
     </style>
 </head>
 
+
 <body>
-    <header>
+<header>
         <div class="inner">
             <nav>
                 <li><span><a href="PersonalInformation.php">Personal Information</a></span></li>
@@ -51,73 +103,40 @@
                 </div>
             </div>
         </div>
-    </header>
+</header>
     <h1>Courses Information</h1>
 
-    <div class="margin">
-        <div >
-        <table   border="1"cellpadding="5 "cellspacing="0" width="94%">
-            <tr  bgcolor="606060">
-              <th  rowspan="2" class="left" width="2%">#</th>  
-              <th  rowspan="2" width="12%" >Course Name</th> 
-              <th  rowspan="2"width="8%" >Total Hours</th> 
-              <th  colspan="2" width="12%" >Date</th>
-              <th  rowspan="2"width="12%" >Institution</th>   
-             <th   rowspan="2" width="10%" >Attachment</th> 
-             <th   rowspan="2" colspan="2" class="right"   width="12%">Notes</th> 
-            </tr>    
-              <tr align="middle" bgcolor="606060" >
+    <table border="1"cellpadding="5 "cellspacing="0" width="94%" style="margin-left: 20px;">
+        <tr bgcolor="606060">
+            <th rowspan="2" class="left" width="2%" >#</th>  
+            <th rowspan="2" width="12%" >Course Name</th>
+            <th rowspan="2"width="8%" >Total Hours</th>
+            <th colspan="2" width="12%" >Date</th>
+            <th rowspan="2"width="12%" >Institution</th>
+            <th rowspan="2" width="10%" >Attachment</th>
+            <th rowspan="2" colspan="2" class="right" width="12%">Notes</th> 
+        </tr>
+        
+        <tr align="middle" bgcolor="606060" >
            <th>From</th> 
             <th>To</th>   
-            </tr>
-            <tr   height="80px" bgcolor="#E5E5E5">
-                <td  align="center"><b>1</b></td>
-                <td  class="margin">full stack web developer</td>
-                <td  align="center" >70</td>
-                <td  align="center">10/07/2021</td>
-                <td  align="center">10/10/2021</td>
-                <td  align="center">Top Tech</td>
-                <td  align="center"><a href="" >View</a></td>
-                <td  align ="left"colspan="2"> </td>
-            </tr> 
-            <tr height="80" bgcolor="#ffffff"> 
-                <td align="center"><b>2</b></td>
-                <td class="margin" >Java 1</td>
-                <td  align="center" >40</td>
-                <td align="center">10/07/2021</td>
-                <td  align="center">18/08/2021</td>
-                <td  align="center">tech box</td>
-                <td align="center"><a target="_blank"  href="" >View</a></td>
-                <td  align="left"colspan="2"> </td> 
-            </tr>
-            <tr height="80px" bgcolor="#E5E5E5"> 
-                <td align="center"><b>3</b></td>
-                <td class="margin">advanced Java Language </td>
-                <td  align="center" >40</td>
-                <td  align="center">1/8/2021</td>
-                <td  align="center">23/9/2021</td>
-                <td align="center">Top Tech </td>
-                <td align="center"><a target="_blank" href="" >View</a></td>
-                <td  align="left"colspan="2"></td> 
-            </tr>
-            <tr height="80px" bgcolor="#ffffff"> 
-                <td align="middle" class="bottomLeft"><b>4</b></td>
-                <td  class="margin">php laravel</td>
-                <td  align="middle" >60</td>
-                <td  align="center">10/7/2022</td>
-                <td  align="center">23/09/2022</td>
-                <td  align="center">Riyada Center</td>
-                <td  align="center"><a href="" align="center">View</a></td>
-               <td   align ="left"colspan="2" class="bottomRight"></td> 
-                 
-            </tr>
-           
-           
-        </table>
-    </div>     
-	</div>
+        </tr>
 
-    <div id="footer">
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+            <tr height="80px" bgcolor="#E5E5E5">
+                <td align="center"><b><?php echo $row["id"]; ?>"</b></td>
+                <td align="center"><?php echo $row["CourseName"]; ?></td>
+                <td class="margin"><?php echo $row["Hours"]; ?></td>
+                <td align="center"><?php echo $row["StartDate"]; ?></td>
+                <td align="center"><?php echo $row["EndDate"]; ?></td>
+                <td align="center"><?php echo $row["Institution"]; ?></td>
+                <td align="center"><a href="ImageView.php?id=<?php echo $row["id"]; ?>">View</a></td>
+                <td align ="left" colspan="2"><?php echo $row["Notes"]; ?></td>
+            </tr>
+        <?php } ?>
+    </table>
+
+     <div id="footer">
         <p>&copy; My Website 2023. mohamadkhaled All rights reserved</p>
     </div>
 </body>

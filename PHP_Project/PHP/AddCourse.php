@@ -54,7 +54,7 @@
     </header>
     <div class="body">
         <h1 style="margin-left: 50px;">Add Course</h1>
-        <form action="" class="Courses" method="post">
+        <form action="CoursesInformation.php" class="Courses" method="post">
             <img id="image" name="image" src="../Images/Exp.jpeg" alt="Google logo">
 
             <div class="test">
@@ -63,7 +63,7 @@
                 <input type="text" id="Course" name="CourseName" placeholder="CS 50"><br><br>
 
                 <label for="hours">Number OF Hours : </label>
-                <input type="number" id="hours" name="hours" placeholder="50"><br><br>
+                <input type="number" id="hours" name="Hours" placeholder="50"><br><br>
 
                 <label for="StartDate">Start Date : </label>
                 <input type="date" id="StartDate" name="StartDate" max="2025-12-31"><br><br>
@@ -71,8 +71,8 @@
                 <label for="EndDate">End Date : </label>
                 <input type="date" id="EndDate" name="EndDate" max="2025-12-31"><br><br>
 
-                <label for="institutions">institutions : </label>
-                <input type="text" id="institutions" name="institutions" placeholder=""><br><br>
+                <label for="Institution">institutions : </label>
+                <input type="text" id="Institution" name="Institution" placeholder=""><br><br>
 
                 <label for="File">File : </label>
                 <input type="file" id="File" name="File" placeholder="Gaza"><br><br>

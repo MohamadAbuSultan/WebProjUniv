@@ -39,13 +39,41 @@
 
     <div class="mydiv">
       <div class="p1">
-        <h3>Web development <sub>selflearning</sub></h3>
-        <b>from 7/2022 to 5/2023</b>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, aut. Reiciendis nihil, ab iure repellat iusto aut nisi omnis magnam delectus tempora fuga dolor excepturi eaque esse quae voluptatem doloribus explicabo suscipit nulla quaerat ipsum ratione laudantium repellendus debitis. Ex!</p>
-        <br><br><br>
-        <h3>Unity Developer <sub>selflearning</sub></h3>
-        <b>from 7/2022 to 5/2023</b>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, aut. Reiciendis nihil, ab iure repellat iusto aut nisi omnis magnam delectus tempora fuga dolor excepturi eaque esse quae voluptatem doloribus explicabo suscipit nulla quaerat ipsum ratione laudantium repellendus debitis. Ex!</p>
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "test";
+
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+        if ($conn->connect_error) {
+            die("Error connecting to MySQL: " . $conn->connect_error);
+        }
+
+        $query = "SELECT * FROM experiencesinformation LIMIT 5";
+        $result = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $experienceCategory = $row['ExperienceCategory'];
+                $experienceTitle = $row['ExperienceTitle'];
+                $startMonth = $row['StartMonth'];
+                $endMonth = $row['EndMonth'];
+                $institution = $row['Institution'];
+                $description = $row['Description'];
+
+                echo "<h3>$experienceTitle <sub>$experienceCategory</sub></h3>";
+                echo "<b>from $startMonth to $endMonth</b>";
+                echo "<p>$description</p>";
+                echo "<br><br>";
+            }
+        } else {
+            echo "No experiences found.";
+        }
+
+        mysqli_close($conn);
+        ?>
       </div>    
    </div> 
    <br><br>
