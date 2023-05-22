@@ -111,7 +111,7 @@ if (mysqli_num_rows($result) > 0) {
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <div class="inner">
             <nav>
                 <li><span><a href="PersonalInformation.php" style="color: white;">Personal Information</a></span></li>
@@ -127,7 +127,8 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
+    <?php include 'index.php'?>
 
     <div class="PersonalInformation">
         <h1 style="margin-left: 50px; margin-bottom: 20px;">Personal Information</h1>

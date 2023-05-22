@@ -16,7 +16,7 @@
          
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="inner">
             <nav>
                 <li><span><a href="PersonalInformation.php">Personal Information</a></span></li>
@@ -32,7 +32,9 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
+    <?php require 'index.php';?>
+
     <div>
 
     <h1>Experiences Information</h1>

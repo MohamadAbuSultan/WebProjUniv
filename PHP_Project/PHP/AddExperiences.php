@@ -56,7 +56,7 @@ mysqli_close($conn);
          
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="inner">
             <nav>
                 <li><span><a href="PersonalInformation.php">Personal Information</a></span></li>
@@ -72,7 +72,9 @@ mysqli_close($conn);
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
+    <?php require 'index.php';?>
+
     <h1>Add Experiences</h1>
     <img id="image" name="image" src="../Images/Exp.jpeg" alt="Google logo">
 
