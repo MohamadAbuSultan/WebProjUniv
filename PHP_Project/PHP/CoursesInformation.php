@@ -108,7 +108,7 @@ $result2 = mysqli_query($conn, $query2);
 $row = mysqli_fetch_assoc($result2);
 $count = $row['total'];
 
-$limit = 20; // Set the desired limit
+$limit = 100; // Set the desired limit
 
 if ($count >= $limit) {
     // Delete all previous insertions
@@ -159,23 +159,7 @@ if ($count >= $limit) {
 
 
 <body>
-    <!-- <header>
-        <div class="inner">
-            <nav>
-                <li><span><a href="PersonalInformation.php">Personal Information</a></span></li>
-                <li><span><a href="CoursesInformation.php" style="color: white;">Courses Information</a></span></li>
-                <li><span><a href="ExperiencesInformation.php">Experiences Information</a></span></li>
-                <li><span><a href="AddCourse.php">Add Course</a></span></li>
-                <li><span><a href="AddExperiences.php">Add Experiences</a></span></li>
-            </nav>
-
-            <div class="logo">
-                <div>
-                    <img src="../Images/Azhar_blue_LOGO.png" alt="Azhar_blue_LOGO">
-                </div>
-            </div>
-        </div>
-</header> -->
+   
     <?php require 'index.php'; ?>
 
     <h1>Courses Information</h1>

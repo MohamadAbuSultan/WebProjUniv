@@ -28,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      VALUES ('$ExperienceCategory', '$ExperienceTitle', '$StartMonth', '$EndMonth', '$Institution', '$Description')";
 
     if (mysqli_query($conn, $query)) {
-        header("Location: ExperiencesInformation.php"); // Redirect to the ExperiencesInformation.php page
+        // Redirect to the ExperiencesInformation.php page with query parameters
+        header("Location: ExperiencesInformation.php?category=$ExperienceCategory&title=$ExperienceTitle&startMonth=$StartMonth&endMonth=$EndMonth&institution=$Institution&description=$Description");
         exit();
     } else {
         echo "Error inserting experience: " . mysqli_error($conn);
@@ -40,6 +41,7 @@ mysqli_close($conn);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,34 +53,18 @@ mysqli_close($conn);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <title>Add Experiences</title>
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/unispace"/>
-    <link rel="stylesheet" href="https://allfont.net/allfont.css?fonts=comic-sans-ms-bold"/>
-         
-</head>
-<body>
-    <!-- <header>
-        <div class="inner">
-            <nav>
-                <li><span><a href="PersonalInformation.php">Personal Information</a></span></li>
-                <li><span><a href="CoursesInformation.php">Courses Information</a></span></li>
-                <li><span><a href="ExperiencesInformation.php">Experiences Information</a></span></li>
-                <li><span><a href="AddCourse.php">Add Course</a></span></li>
-                <li><span><a href="AddExperiences.php" style="color: white;">Add Experiences</a></span></li>
-            </nav>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/unispace" />
+    <link rel="stylesheet" href="https://allfont.net/allfont.css?fonts=comic-sans-ms-bold" />
 
-            <div class="logo">
-                <div>
-                    <img src="../Images/Azhar_blue_LOGO.png" alt="Azhar_blue_LOGO">
-                </div>
-            </div>
-        </div>
-    </header> -->
-    <?php require 'index.php';?>
+</head>
+
+<body>
+    <?php require 'index.php'; ?>
 
     <h1>Add Experiences</h1>
     <img id="image" name="image" src="../Images/Exp.jpeg" alt="Google logo">
 
-  
+
     <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <div class="clear">
             <div class="col1">
@@ -117,10 +103,10 @@ mysqli_close($conn);
                     <!-- Add more month options as needed -->
                 </select>
                 <select class="date" name="startMonthYear">
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
                     <!-- Add more year options as needed -->
                 </select>
             </div>
@@ -145,10 +131,10 @@ mysqli_close($conn);
                     <option value="12">December</option>
                 </select>
                 <select class="date" name="endMonthYear">
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
                     <!-- Add more year options as needed -->
                 </select>
             </div>
@@ -180,4 +166,5 @@ mysqli_close($conn);
         <p>&copy; My Website 2023. mohamadkhaled All rights reserved</p>
     </div>
 </body>
+
 </html>

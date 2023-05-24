@@ -47,8 +47,9 @@
                 <input type="submit" value="Add Course">
             </div>
         </form>
+        
     </div>
-
+   
     <div id="footer">
         <p>&copy; My Website 2023. mohamadkhaled All rights reserved</p>
     </div>
