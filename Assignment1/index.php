@@ -15,7 +15,7 @@
             display: table;
             height: 100%;
             float: left;
-            margin: 20px 50px;
+            margin: 30px 50px;
         }
 
         header nav a:hover {
@@ -24,7 +24,17 @@
 
         nav a {
             color: black;
-        }    
+        }
+
+        header {
+            width: 100vw;
+            height: 70px;
+            border-top: solid 1px rgba(0, 0, 0, 0.897);
+            border-top-right-radius: solid 1px rgba(0, 0, 0, 0.897);
+            border-top-left-radius: solid 1px rgba(0, 0, 0, 0.897);
+            border-bottom: solid 1px rgba(0, 0, 0, 0.897);
+            background-color: rgb(0, 156, 254);
+        }
     </style>
 </head>
 
@@ -33,14 +43,17 @@
     <header>
         <div>
             <nav>
-                <li><span><a href="PersonalInformation.php">Personal Information</a></span></li>
-                <li><span><a href="CoursesInformation.php">Courses Information</a></span></li>
-                <li><span><a href="ExperiencesInformation.php">Experiences Information</a></span></li>
-                <li><span><a href="AddCourse.php">Add Course</a></span></li>
-                <li><span><a href="AddExperiences.php">Add Experiences</a></span></li>
+                <li><span><a href="">My Page</a></span></li>
+                <li><span><a href="">Employee Engagment</a></span></li>
+                <li><span><a href="">Employee Directory</a></span></li>
+                <li><span><a href="">PMS</a></span></li>
+                <li><span><a href="">ESS</a></span></li>
+                <li><span><a href="">Dashboard</a></span></li>
+                <li><span><a href="">Downloads</a></span></li>
             </nav>
         </div>
     </header>
 
 </body>
+
 </html>
