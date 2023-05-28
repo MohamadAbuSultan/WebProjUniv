@@ -85,7 +85,7 @@
         <canvas id="signatureCanvas" width="500" height="200" style="border: 1px solid #000;"></canvas><br>
         <button type="button" onclick="clearSignature()">Clear</button><br><br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" style="color: white; background-color: blue; border-color: red; border-radius: 15px; margin-left: 230px;">
     </form>
 
     <script>
