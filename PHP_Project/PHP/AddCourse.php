@@ -39,7 +39,7 @@
                 <input type="text" name="Notes" id="Notes" required><br><br>
 
                 <label for="ImageURL">Image URL:</label>
-                <input type="url" name="ImageURL" id="ImageURL" required><br><br>
+                <input type="url" name="ImageURL" id="ImageURL" ><br><br>
 
                 <label for="File">File:</label>
                 <input type="file" name="Image" id="Image" accept="image/jpeg, image/png, image/gif" required><br><br>
