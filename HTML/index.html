@@ -1,9 +1,11 @@
 <!DOCTYPE html> <!-- the browser render : standards compliance mode -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This is the best way to learn how to code">
+    <meta name="color-scheme" content="dark light">
     <!-- meta description هاي بتكون إلي تحت العنوان ،
          لما تيجي تبحث بيطلعلك 10 خيارات بحث مثلاً
          ف هاي بتكون إلي تحت العنوان مباشرةً
@@ -11,11 +13,25 @@
          description وأكتب بالبحث
     -->
     <title>Document</title>
-    <style></style>
+    <style>
+        body {
+            padding: 25px;
+            background-color: white;
+            color: black;
+            font-size: 25px;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
     <script></script>
     <link rel="stylesheet" href=""> <!-- rel علاقة الملف بالصفحة إلي أنا فيها -->
 </head>
+
 <body>
+    <button onclick="myFunction()">Toggle dark mode</button>
     <h1>This is H1</h1>
     <!-- user agent : the browser -->
     <p>This is pharaprah</p>
@@ -44,19 +60,67 @@
         ins => inserted text زي إشي إنضاف جديد
         sub => Subscript
         sup => Superscript
+        src => Source
+        alt => Alternate text
     -->
-     <p>this is <b>bold text</b> </p>
-     <p>this is <strong>Strong text</strong> </p>
-     <p>this is <i>italic text</i> </p>
-     <p>this is <em>emphasized text</em> </p>
-     <p>this is <mark>Mark text</mark> </p>
-     <p>this is <u>underline text</u> </p>     
-     <p>this is <small>Small text</small> </p>     
-     <p>this is <del>deleted text</del> </p>     
-     <p>this is Old price <del>100$</del> , new price 80$ </p>     
-     <p>this is <ins>book store</ins>, welcome</p>     
-     <p>this is H<sub>2</sub>O</p>     
-     <p>this is 2<sup>3</sup> = 8</p>     
-    
+    <p>this is <b>bold text</b> </p>
+    <p>this is <strong>Strong text</strong> </p>
+    <p>this is <i>italic text</i> </p>
+    <p>this is <em>emphasized text</em> </p>
+    <p>this is <mark>Mark text</mark> </p>
+    <p>this is <u>underline text</u> </p>
+    <p>this is <small>Small text</small> </p>
+    <p>this is <del>deleted text</del> </p>
+    <p>this is Old price <del>100$</del> , new price 80$ </p>
+    <p>this is <ins>book store</ins>, welcome</p>
+    <p>this is H<sub>2</sub>O</p>
+    <p>this is 2<sup>3</sup> = 8</p>
+    <a href="https://google.com" target="_blank" title="go to google">Google</a>
+    <!-- blank => الصفحة هتفتح بصفحة جديدة لما تضغط على اللينك-->
+    <a href="#mohamad" title="go to mohamad pharaprah">mohamad pharaprah</a>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <p id="mohamad">Mohamad pharaprah : Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque
+        laudantium vitae blanditiis repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores
+        expedita a repudiandae, iure inventore facere autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus atque laudantium vitae blanditiis
+        repudiandae officiis officia quos illum, error totam? Officiis tenetur asperiores expedita a repudiandae, iure
+        inventore facere autem.</p>
+    <a href="mailto:mohamadknsult2@gmail.com">mohamad email</a> <br>
+    <img decoding="async" src="../cover-speed-website.png" alt="Will Not Show"> <br>
+    <img decoding="async" src="missing-image.png" alt="Logo Testing"> <br>
+    <img decoding="async" src="googlelogo.png" alt="mmm" width="300px" height="300px"> <br>
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
+
 </html>
